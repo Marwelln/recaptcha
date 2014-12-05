@@ -18,7 +18,7 @@ If you're using Laravel, you need to `'Marwelln\Recaptcha\RecaptchaServiceProvid
 
 # Recaptcha keys
 
-To use reCAPTCHA, you need to have a `site key` and a ``secret key`. [Click here](https://www.google.com/recaptcha/admin#createsite) to setup a domain and get your keys.
+To use reCAPTCHA, you need to have a `site key` and a `secret key`. [Click here](https://www.google.com/recaptcha/admin#createsite) to setup a domain and get your keys.
 
 The `site key` is using for the widget and the `secret key` is used to validate the response we get from Google.
 
