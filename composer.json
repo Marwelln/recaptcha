@@ -1,6 +1,7 @@
 {
     "name": "marwelln/recaptcha",
-    "description": "",
+    "description": "Recaptcha that supports Google's new \"no captcha recaptcha\" (with Laravel support)",
+    "license": "MIT",
     "authors": [
         {
             "name": "Martin Mårtensson",
@@ -9,7 +10,6 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*"
     },
     "autoload": {
         "classmap": [
