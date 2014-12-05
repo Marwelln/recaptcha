@@ -24,11 +24,11 @@ class Script {
 	 * @return UserFactory
 	 */
 	public static function instance() {
-			if ( ! isset(static::$instance)) {
-				static::$instance = new static;
-			}
+		if ( ! isset(static::$instance)) {
+			static::$instance = new static;
+		}
 
-			return static::$instance;
+		return static::$instance;
 	}
 
 	/**
