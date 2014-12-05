@@ -56,7 +56,7 @@ To validate the response we get from Google we use the `Marwelln\Recaptcha\Model
     $response = '';
     if ( ! $validated) {
         $response .= '<pre>' . print_r($validator->errors(), true) . '</pre>';
-  }
+    }
 
     $response .= 'Did I validate? ' . ($validated ? 'Yes.' : 'No.');
 
