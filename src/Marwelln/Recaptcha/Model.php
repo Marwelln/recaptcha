@@ -73,7 +73,9 @@ class Model {
 		$json = (new Request($this->url))->run();
 
 		// If we got errors, add them to the errors property.
-		$this->errors = $json->{"error-codes"};
+		if (isset($json->{"error-codes"})) {
+			$this->errors = $json->{"error-codes"};
+		}
 
 		return (bool) $json->success;
 	}
