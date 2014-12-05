@@ -48,8 +48,8 @@ class Model {
 	 *
 	 * @param $response str
 	 */
-	public function __construct($response, $secretKey) {
-		$this->secretKey = $secretKey;
+	public function __construct($response, $secretKey = null) {
+		$this->secretKey = $secretKey ?: getenv('RECAPTCHA_SECRETKEY');
 		$this->response = $response;
 	}
 
