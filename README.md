@@ -9,7 +9,7 @@ This package gives you an easy validation in PHP for Google's new (december 2014
 
 You can install this package by using [Composer](https://getcomposer.org/).
 
-- Option 1: Add `"marwelln/recaptcha" : "dev-master"` to your `composer.json` file and run `composer update`.
+- Option 1: Add `"marwelln/recaptcha" : "~1.0"` to your `composer.json` file and run `composer update`.
 - Option 2: Run `composer require marwelln/recaptcha:dev-master`
 
 ### Laravel
