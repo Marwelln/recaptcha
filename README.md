@@ -106,6 +106,6 @@ Laravel 4:
 
 Laravel 5:
 
-    php artisan publish:config marwelln/recaptcha
+    php artisan vendor:publish
 
 See [Protecting Sensitive Configuration](http://laravel.com/docs/4.2/configuration#protecting-sensitive-configuration) if you don't know how to setup environment variables in Laravel 4.
