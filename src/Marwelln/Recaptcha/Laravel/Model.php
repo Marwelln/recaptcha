@@ -6,7 +6,7 @@ use Marwelln\Recaptcha\Request;
 
 class Model extends \Marwelln\Recaptcha\Model {
 	public function __construct($response, $secretKey = null) {
-		parent::__construct($response, $secretKey ?: Config::get('recaptcha::secretKey'));
+		parent::__construct($response, $secretKey ?: Config::get('recaptcha.secretKey'));
 
 		$this->errors = new MessageBag;
 	}
@@ -19,7 +19,7 @@ class Model extends \Marwelln\Recaptcha\Model {
 	public function validate() {
 		$this->buildUrl();
 
-		$json = (new Request($this->url))->run(Config::get('recaptcha::curl'));
+		$json = (new Request($this->url))->run(Config::get('recaptcha.curl'));
 
 		// If we got errors, add them to the errors property.
 		if (isset($json->{"error-codes"})) {

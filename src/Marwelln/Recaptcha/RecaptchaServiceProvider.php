@@ -19,7 +19,12 @@ class RecaptchaServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('marwelln/recaptcha');
+		$this->publishes([
+			__DIR__ . '/../../config/config.php' => config_path('recaptcha.php'),
+			__DIR__ . '/../../views/display.blade.php' => base_path('resources/views/vendor/recaptcha/display.blade.php'),
+		]);
+
+		$this->loadViewsFrom(__DIR__ . '/../../views', 'recaptcha');
 
 		$this->app->validator->resolver(function($translator, $data, $rules, $messages) {
 			return new Validator($translator, $data, $rules, $messages);
@@ -33,6 +38,7 @@ class RecaptchaServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
+
 	}
 
 	/**
@@ -42,7 +48,25 @@ class RecaptchaServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return [];
+	}
+
+
+	/**
+	 * Register a view file namespace.
+	 *
+	 * @param  string  $namespace
+	 * @param  string  $path
+	 * @return void
+	 */
+	protected function loadViewsFrom($path, $namespace)
+	{
+		if (is_dir($appPath = $this->app->basePath() . '/resources/views/vendor/' . $namespace))
+		{
+			$this->app['view']->addNamespace($namespace, $appPath);
+		}
+
+		$this->app['view']->addNamespace($namespace, $path);
 	}
 
 }
