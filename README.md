@@ -9,7 +9,7 @@ This package gives you an easy validation in PHP for Google's new (december 2014
 
 You can install this package by using [Composer](https://getcomposer.org/).
 
-- Option 1: Add `"marwelln/recaptcha" : "~1.0"` to your `composer.json` file and run `composer update`.
+- Option 1: Add `"marwelln/recaptcha" : "~2.0"` to your `composer.json` file and run `composer update`.
 - Option 2: Run `composer require marwelln/recaptcha:dev-master`
 
 ### Laravel
@@ -38,13 +38,13 @@ There are three optional attributes available for you to style and manage the wi
 
 If your using Laravel, you can display the widget by including the available view file. This will include the script file and the div tag.
 
+Laravel 5:
+
+    {!! View::make('recaptcha.display') !!}
+    
 Laravel 4:
 
     {{ View::make('recaptcha::display') }}
-
-Laravel 5:
-
-    {!! View::make('recaptcha::display') !!}
 
 # Back-end usage
 
@@ -100,12 +100,12 @@ There is not really a need to publish the configuration file. Both the `siteKey`
 
 The only option available is to enable or disable curl. So if you're having trouble or don't have access to curl, you can publish the configuration file and change the `curl` value to false. We will then use `file_get_contents` instead.
 
-Laravel 4:
-
-    php artisan config:publish marwelln/recaptcha
-
 Laravel 5:
 
     php artisan vendor:publish
+    
+Laravel 4:
+
+    php artisan config:publish marwelln/recaptcha
 
 See [Protecting Sensitive Configuration](http://laravel.com/docs/4.2/configuration#protecting-sensitive-configuration) if you don't know how to setup environment variables in Laravel 4.
