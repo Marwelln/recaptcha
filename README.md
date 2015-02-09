@@ -40,7 +40,7 @@ If your using Laravel, you can display the widget by including the available vie
 
 Laravel 5:
 
-    {!! View::make('recaptcha.display') !!}
+    {!! View::make('recaptcha::display') !!}
     
 Laravel 4:
 
